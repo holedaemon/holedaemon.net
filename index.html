@@ -1,38 +1,44 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>holedaemon</title>
-
-        <meta charset="utf-8">
-        
-        <meta property="og:title" content="holedaemon">
-        <meta property="og:description" content="webpage for internet poweridiot holedaemon">
-        <meta property="og:type" content="website">
-        <meta property="og:url" content="https://{{placeholder "http.request.host"}}{{placeholder "http.request.uri.path"}}">
-        <meta property="og:image" content="https://{{placeholder "http.request.host"}}/static/pinhead.png">
-
-        <meta name="twitter:card" content="summary">
-        <meta name="twitter:title" content="holedaemon">
-        <meta name="twitter:description" content="webpage for internet poweridiot holedaemon">
-        <meta name="twitter:image" content="https://{{placeholder "http.request.host"}}/static/pinhead.png">
-        <meta name="twitter:site" content="@holedaemon">
-        <meta name="twitter:creator" content="@holedaemon">
+        {{ include "include/head.html" "holedaemon" }}
 
         <link rel="stylesheet" href="/static/index.css">
     </head>
     <body>
-        <div id="sidebar">
-            <img id="profile" src="/static/pfp.png">
+        <div id="aside">
+            <img id="profile-image" src="/static/pfp.png">
         </div>
 
         <div id="content">
-            <h1>holedaemon</h1>
-            <hr class="smaller">
-            <p>the realest. the swaggiest.</p>
-            <p>&#8220;holedaemon is cool abnd should be given the launch codes&#8221; &#8212; IGN</p>
-            <p>&#8220;if holedaemon asked me to sniff their feet I would do that because they are that cool&#8221; &#8212; mark zuckerberg</p>
-            <p>&#8220;bark. ruff ruff. gr bark. snarl ruff. ruff bark bark bark bark bark bark bark bark&#8221; &#8212; joe biden's dead dog</p>
-            <hr>
+            <div id="heading">
+                <h1>holedaemon</h1>
+                <p>the realest. the swaggiest.</p>
+            </div>
+
+            <hr class="hr">
+
+            <figure>
+                <blockquote>
+                    <p>holedaemon is cool abnd should be given the launch codes</p>
+                </blockquote>
+                <figcaption>&mdash; IGN</figcaption>
+            </figure>
+
+            <figure>
+                <blockquote>
+                    <p>if holedaemon asked me to sniff their feet I would do that because they are that cool</p>
+                </blockquote>
+                <figcaption>&mdash; Mark Zuckerberg</figcaption>
+            </figure>
+
+            <figure>
+                <blockquote>
+                    <p>bark. ruff ruff. gr bark. snarl ruff. ruff bark bark bark bark bark bark bark bark</p>
+                </blockquote>
+                <figcaption>&mdash; Joe Biden's dead dog</figcaption>
+            </figure>
+
             <ul>
                 <li>tweets <a href="https://twitter.com/holedaemon" target="_blank">@holedaemon</a></li>
                 <li>tumbles <a href="https://holedaemon.tumblr.com" target="_blank">holedaemon</a></li>

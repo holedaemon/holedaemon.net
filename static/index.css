@@ -8,7 +8,19 @@ body {
     height: calc(100vh - 16px);
 }
 
-#sidebar {
+#heading > h1 {
+    margin-right: 0.25rem;
+}
+
+#heading > h1, #heading > p {
+    display: inline;
+}
+
+.hr {
+    margin-top: -0.25rem;
+}
+
+#aside {
     margin-right: 3rem;
     justify-self: end;
     grid-row: 2 / 4;
@@ -18,33 +30,58 @@ body {
 #content {
     grid-row: 2 / 4;
     grid-column: 3 / 4;
-}
 
-.smaller {
-    margin-top: -1rem;
-}
-
-#content {
     font-size: larger;
 }
 
-#content > p:not(:last-child) {
-    margin-bottom: 1.25rem;
+blockquote {
+    margin: 0;
+    border-left-width: 2px;
+    border-left-color: #8e9394;
+    border-left-style: solid;
 }
 
-#profile {
+blockquote p {
+    margin-left: 5px;
+}
+
+#profile-image {
     border-radius: 50%;
     width: 240px;
     height: 240px;
 }
 
-@media (max-width: 600px) {
-    #profile {
-        visibility: hidden;
+@media screen and (max-width: 768px) {
+    body {
+        display: grid;
+        justify-content: center;
+        align-content: center;
     }
 
-    #content {
-        grid-row: 2 / 4;
-        grid-column: 2 / 4;
+    #heading > h1 {
+        margin-right: 0.25rem;
+    }
+    
+    #heading > h1, #heading > p {
+        display: inline;
+    }
+    
+    .hr {
+        margin-top: -0.25rem;
+    }
+
+    blockquote {
+        margin: 0;
+        border-left-width: 2px;
+        border-left-color: #8e9394;
+        border-left-style: solid;
+    }
+    
+    blockquote p {
+        margin-left: 5px;
+    }
+
+    #aside {
+        display: none;
     }
 }
