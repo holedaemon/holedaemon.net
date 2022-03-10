@@ -1,0 +1,25 @@
+{{ $pathParts := splitList "/" .OriginalReq.URL.Path }}
+{{ $markdownFilename := default "index" (slice $pathParts 2 | join "/") }}
+{{ $markdownFilePath := printf "/posts/%s.md" $markdownFilename }}
+{{ if not (fileExists $markdownFilePath) }}{{ httpError 404 }}{{ end }}
+{{ $markdownFile := (include $markdownFilePath | splitFrontMatter) }}
+{{ $title := default $markdownFilename $markdownFile.Meta.title }}
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>{{ $title }} @ holedaemon</title>
+
+        {{ include "include/head.html" "$title" }}
+
+        <link rel="stylesheet" href="/static/blog.css">
+    </head>
+    <body>
+        <main id="content">
+            <h1>{{ $title }} &mdash; <a href="/">Home</a></h1>
+
+            <span id="markdown">
+                {{markdown $markdownFile.Body}}
+            </span>
+        </main>
+    </body>
+</html>
