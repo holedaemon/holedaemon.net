@@ -5,46 +5,38 @@
 
         <link rel="stylesheet" href="/static/index.css">
     </head>
-    <body>
-        <div id="aside">
-            <img id="profile-image" src="/static/pfp.jpg">
-        </div>
+        <aside id="bio">
+            <figure class="object">
+                <img id="profile-picture" src="/static/pfp.png" alt="PRIEST OF THE PIT; Known Enemy: holedaemon">
+                <figcaption class="title">holedaemon</figcaption>
+            </figure>
+        </aside>
 
-        <div id="content">
-            <div id="heading">
-                <h1>holedaemon</h1>
-                <p>the realest. the swaggiest.</p>
+        <main id="content">
+            <div id="about" class="object">
+                <h3 class="header">ABOUT</h3>
+                <p>
+                    bit of a chode
+                </p>
             </div>
+            <div id="blog" class="object">
+                <h3 class="header">BLOG</h3>
 
-            <hr class="hr">
-
-            <figure>
-                <blockquote>
-                    <p>holedaemon is cool abnd should be given the launch codes</p>
-                </blockquote>
-                <figcaption>&mdash; IGN</figcaption>
-            </figure>
-
-            <figure>
-                <blockquote>
-                    <p>if holedaemon asked me to sniff their feet I would do that because they are that cool</p>
-                </blockquote>
-                <figcaption>&mdash; Mark Zuckerberg</figcaption>
-            </figure>
-
-            <figure>
-                <blockquote>
-                    <p>bark. ruff ruff. gr bark. snarl ruff. ruff bark bark bark bark bark bark bark bark</p>
-                </blockquote>
-                <figcaption>&mdash; Joe Biden's dead dog</figcaption>
-            </figure>
-
-            <ul>
-                <li>tweets <a href="https://twitter.com/holedaemon" target="_blank">@holedaemon</a></li>
-                <li>tumbles <a href="https://holedaemon.tumblr.com" target="_blank">holedaemon</a></li>
-                <li>code <a href="https://github.com/holedaemon" target="_blank">holedaemon</a></li>
-                <li>hate mail <a href="mailto:m@holedaemon.net" target="_blank">m@holedaemon.net</a></li>
-            </ul>
-        </div>
+                {{ $files := listFiles "posts" }}
+                {{ if eq (len $files) 0 }}
+                    <p>0 posts!</p>
+                {{ else }}
+                    <ul id="post-list">
+                        {{ range $file := $files}}
+                            {{ $mdPath := printf "posts/%s" $file }}
+                            {{ $md := (include $mdPath | splitFrontMatter) }}
+                            {{ $title := default $md $md.Meta.title }}
+                            <li>{{ $title }}</li>
+                        {{ end }}
+                    </ul>
+                {{ end }}
+            </div>
+        </main>
+    <body>
     </body>
 </html>
