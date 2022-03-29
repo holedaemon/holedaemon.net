@@ -1,4 +1,11 @@
-@media screen and (min-width: 769px) {
+
+@media screen and (max-width: 1359px) {
+    #aside {
+        display: none;
+    }
+}
+
+@media screen and (min-width: 1360px) {
     body {
         display: grid;
     
@@ -26,6 +33,8 @@
         justify-self: end;
         grid-row: 2 / 4;
         grid-column: 2 / 3;
+
+        display: block;
     }
     
     #content {
@@ -53,37 +62,35 @@
     }
 }
 
-@media screen and (max-width: 768px) {
-    body {
-        display: grid;
-        justify-content: center;
-        align-content: center;
-    }
+body {
+    display: grid;
+    justify-content: center;
+    align-content: center;
+}
 
-    #heading > h1 {
-        margin-right: 0.25rem;
-    }
-    
-    #heading > h1, #heading > p {
-        display: inline;
-    }
-    
-    .hr {
-        margin-top: -0.25rem;
-    }
+#heading > h1 {
+    margin-right: 0.25rem;
+}
 
-    blockquote {
-        margin: 0;
-        border-left-width: 2px;
-        border-left-color: #8e9394;
-        border-left-style: solid;
-    }
-    
-    blockquote p {
-        margin-left: 5px;
-    }
+#heading > h1, #heading > p {
+    display: inline;
+}
 
-    #aside {
-        display: none;
-    }
+.hr {
+    margin-top: -0.25rem;
+}
+
+blockquote {
+    margin: 0;
+    border-left-width: 2px;
+    border-left-color: #8e9394;
+    border-left-style: solid;
+}
+
+blockquote p {
+    margin-left: 5px;
+}
+
+h3 {
+    margin-bottom: -1rem;
 }
