@@ -1,96 +1,166 @@
-
-@media screen and (max-width: 1359px) {
-    #aside {
-        display: none;
-    }
+#header-image {
+    grid-column: 3 / 4;
+    align-self: center;
+    justify-self: center;
 }
 
-@media screen and (min-width: 1360px) {
-    body {
-        display: grid;
-    
-        grid-template-rows: repeat(4, 1fr);
-        grid-template-columns: 25vw 20vw 30vw 25vw;
-    
-        width: calc(100vw - 16px);
-        height: calc(100vh - 16px);
-    }
-    
-    #heading > h1 {
-        margin-right: 0.25rem;
-    }
-    
-    #heading > h1, #heading > p {
-        display: inline;
-    }
-    
-    .hr {
-        margin-top: -0.25rem;
-    }
-    
-    #aside {
-        margin-right: 3rem;
-        justify-self: end;
-        grid-row: 2 / 4;
-        grid-column: 2 / 3;
+#about {
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
 
-        display: block;
-    }
+    border-top: 1px solid black;
     
-    #content {
-        grid-row: 2 / 4;
-        grid-column: 3 / 4;
-    
-        font-size: larger;
-    }
-    
-    blockquote {
-        margin: 0;
-        border-left-width: 2px;
-        border-left-color: #8e9394;
-        border-left-style: solid;
-    }
-    
-    blockquote p {
-        margin-left: 5px;
-    }
-    
-    #profile-image {
-        border-radius: 50%;
-        width: 240px;
-        height: 240px;
-    }
+    /* text-align: center; */
+}
+
+#sitemap {
+    grid-column: 3 / 4;
+    grid-row: 2 / 3;
+
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+    border-top: 1px solid black;
+
+    text-align: center;
+}
+
+#social-list {
+    margin-bottom: 1rem;
+}
+
+#projects {
+    grid-column: 4 / 5;
+    grid-row: 2 / 3;
+
+    border-top: 1px solid black;
+}
+
+#projects-list {
+    margin-left: 1rem;
+}
+
+#projects-bot-list {
+    list-style: disc;
+    padding-left: 32px;
+}
+
+#projects-title {
+    margin-bottom: 0;
+}
+
+.title {
+    font-size: 36px;
+    text-align: center;
+}
+
+.subtitle {
+    margin-top: 0;
+    font-size: 13.3333px;
+    text-align: center;
 }
 
 body {
     display: grid;
-    justify-content: center;
-    align-content: center;
-}
-
-#heading > h1 {
-    margin-right: 0.25rem;
-}
-
-#heading > h1, #heading > p {
-    display: inline;
-}
-
-.hr {
-    margin-top: -0.25rem;
-}
-
-blockquote {
+    width: 100vw;
+    height: 100vh;
     margin: 0;
-    border-left-width: 2px;
-    border-left-color: #8e9394;
-    border-left-style: solid;
+
+    grid-template-rows: 1fr 3fr;
+    grid-template-columns: 10vw 35vw 10vw 35vw 10vw;
 }
 
-blockquote p {
-    margin-left: 5px;
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
 }
 
-h3 {
-    margin-bottom: -1rem;
+li:not(:last-child) {
+    margin-bottom: 1rem;
+}
+
+@media screen and (max-width: 500px) {
+    #header-image {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 1300px) {
+    #header-image {
+        align-self: center;
+        justify-self: center;
+    }
+
+    #about  {
+        border: none;
+        text-align: center;
+        margin-left: 5rem;
+        margin-right: 5rem;
+        margin-bottom: 1rem;
+    }
+
+        
+    #sitemap {
+        border-left: 1px solid black;
+        border-right: 1px solid black;
+        border-top: 1px solid black;
+    
+        text-align: center;
+        margin-bottom: 1rem;
+    }
+    
+    #social-list {
+        margin-bottom: 1rem;
+    }
+
+     
+    #projects {
+        border-top: 1px solid black;
+        text-align: center;
+    }
+    
+    #projects-list {
+        margin-left: 0;
+    }
+    
+    #projects-bot-list {
+        list-style: disc;
+        padding-left: 0px;
+        margin-bottom: 1rem;
+    }
+    
+    #projects-title {
+        margin-bottom: 0;
+    }
+    
+    .title {
+        font-size: 36px;
+        text-align: center;
+    }
+    
+    .subtitle {
+        margin-top: 0;
+        font-size: 13.3333px;
+        text-align: center;
+    }
+
+    body {
+        display: flex;
+        flex-direction: column;
+
+        width: 100vw;
+        height: 100vh;
+        margin: 0;
+    
+    }
+
+    ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+    
+    li:not(:last-child) {
+        margin-bottom: 1rem;
+    }
 }
