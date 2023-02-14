@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        {{ include "include/head.html" "testimonials" }}
+
+        <link rel="stylesheet" href="/static/testimonials.css">
+    </head>
+    <body>
+        {{ if eq (len (listFiles "/testimonials")) 0 }}
+            <h1 id="no-testimonials">Literally no one has submitted one. Lol</h1>
+        {{ else }}
+            {{ range $file := (listFiles "/testimonials") }}
+                {{ if (or (eq (ext $file) ".jpg") (eq (ext $file) ".png")) }}
+                    <img src="/testimonials/{{ $file }}">
+                {{ end }}
+            {{ end }}
+        {{ end }}
+    </body>
+</html>
