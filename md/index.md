@@ -6,6 +6,10 @@
 ![gay.gif](/static/gay.gif) ![quake.gif](/static/quake.gif) ![scrote.png](/static/scrotegang.png) ![javascript.png](/static/javascript.png) 
 ![btmi.gif](/static/btmi.gif)
 
+## sitemap
+- [/testimonials](/testimonials)
+- [/posts](/posts)
+
 ## about
 
 the name is **Max**, and this is my intentionally shitty website. i'm a queer 20-something y/o living in Arizona. i use **they/she** pronouns.
