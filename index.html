@@ -1,3 +1,7 @@
+{{ $markdownFilePath := "/md/index.md" }}
+{{ if not (fileExists $markdownFilePath ) }}{{ httpError 404 }}{{ end }}
+{{ $markdownFile := (include $markdownFilePath | splitFrontMatter) }}
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -6,140 +10,8 @@
         <link rel="stylesheet" href="/static/index.css">
     </head>
     <body>
-        <img id="header-image" src="/static/name.jpg">
-        <section id="about">
-            <h1 class="title">about the chef</h1>
-            <p>Priest of the pit; all-around sludge fiend; savant lord of the southwest: the name is <b>Max</b>. I'm a <span id="age">???</span> year old idiot living in the southwest United States. I'm one of them queer folks; at the time of writing, I use <b>any pronouns</b>, but lean towards a preference of <b>she</b> or <b>they</b>.</p>
-            <h1>FREQUENTLY FOUND LOITERING AT</h1>
-            <ul id="social-list">
-                <li>
-                    <a href="https://twitter.com/holedaemon" target="_blank">TWITTER</a>
-                    <br>
-                    - I DON'T LIKE COCK & BALL TORTURE, BUT I USE TWITTER ANYWAY
-                </li>
-                <li>
-                    <a href="https://twitter.com/skampactdisc" target="_blank">MUSIC TWITTER</a>
-                    <br>
-                    - WHERE I TALK ABOUT MY LOVE FOR SKA PUNK MUSIC TO NOBODY
-                </li>
-                <li>
-                    <a href="https://holedaemon.tumblr.com" target="_blank">TUMBLR</a>
-                    <br>
-                    - WHAT EFFECTIVELY REPLACED TWITTER FOR ME
-                </li>
-                <li>
-                    <a href="https://steamcommunity.com/id/holedaemon" target="_blank">STEAM</a>
-                    <br>
-                    - I GOT THE SECOND SMALLEST COCK IN GAMING
-                </li>
-                <li>
-                    <a href="https://github.com/holedaemon" target="_blank">GITHUB</a>
-                    <br>
-                    - SOURCE CODE FOR VARIOUS PROJECTS; ALL OF THEM TERRIBLE (LIKE THIS WEBSITE!!)
-                </li>
-                <li>
-                    <i>m [at] holedaemon.net</i>
-                    <br>
-                    - SEND ME HATE MAIL OR SOMETHING
-                </li>
-                <li>
-                    <i>holedaemon#8593</i> @ DISCORD
-                    <br>
-                    - CAN THIS SHIT DIE ALREADY
-                </li>
-            </ul>
-            <i>Header image (for those on desktop) was done by <a href="https://twitter.com/designbyboo" target="_blank">boocanan</a>; give her fucking money!!!</i>
-        </section>
-        <nav id="sitemap">
-            <h1>SITEMAP</h1>
-            <ul>
-                <li>
-                    <a href="/testimonials">TESTIMONIALS</a>
-                </li>
-                <li>
-                    <a href="/posts">BLOG POSTS</a>
-                </li>
-                <li>
-                    <img src="/static/scrotegang.png">
-                </li>
-                <li>
-                    <img src="/static/javascript.png">
-                </li>
-                <li>
-                    <img src="/static/quake.gif">
-                </li>
-                <li>
-                    <img src="/static/gay.gif">
-                </li>
-                <li>
-                    <img src="/static/btmi.gif">
-                </li>
-            </ul>
-        </nav>
-        <section id="projects">
-            <h1 id="projects-title" class="title">elmer's glue arts and crafts</h1>
-            <p class="subtitle">Shit that's cool that I've done or am part of</p>
-
-            <ul id="projects-list">
-                <li>
-                    <a href="https://twitter.com/SCROTEGANG" target="_blank">SCROTEGANG</a>
-                    <br>
-                    - A GROUP OF HOMOSEXUAL IDIOTS, WE HAVE A TWITTER
-                </li>
-                <li>
-                    <a href="https://hole.casa" target="_blank">CASA DE HOLE</a>
-                    <br>
-                    - ANOTHER GROUP OF (MOSTLY) HOMOSEXUALS, THIS TIME COMPRISED OF MOST OF MY CLOSEST FRIENDS. THERE'S ALSO A <a href="https://twitter.com/CasadeHole" target="_blank">TWITTER</a>
-                </li>
-                <li>
-                    <a href="https://turnttable.holedaemon.net" target="_blank">TURNTTABLE</a>
-                    <br>
-                    - A LIL WEB INTERFACE THAT DISPLAYS ALL OF MY PHYSICAL MUSIC IN AN UGLY WAY
-                </li>
-                <li>
-                    <a href="https://jaunty.fun" target="_blank">JAUNTY</a>
-                    <br>
-                    - A MINECRAFT SERVER I RUN FOR FRIENDS AND MUTUALS MOST DECEMBERS 
-                </li>
-                <li>
-                    DISCORD BOTS I RUN
-                    <ul id="projects-bot-list">
-                        <li>
-                            <a href="https://github.com/SCROTEGANG/meat" target="_blank">MEAT (UNCIRCUMCISED)</a>
-                            <br>
-                            - GPT-2 TRAINED ON A MILLION+ SCROTEGANG MESSAGES. SHANG TSUNG'S GROSS EXPERIMENT. THE ONE WHO GOT AWAY 💔
-                        </li>
-                        <li>
-                            BALD HSU HAO
-                            <br>
-                            - A MARKOV CHAIN OF A MILLION+ SCROTEGANG MESSAGES. MEAT'S OLDER BROTHER. RAN USING <a href="https://github.com/claabs/markov-discord" target="_blank">claabs/markov-discord</a>
-                        </li>
-                        <li>
-                            <a href="https://github.com/SCROTEGANG/bot" target="_blank">DILF</a>
-                            <br>
-                            - A GENERAL PURPOSE BOT FOR SCROTEGANG. KEEPS TRACK OF THE TIME BETWEEN MENTIONS OF EGORAPTOR EATING PUSSY.
-                        </li>
-                        <li>
-                            <a href="https://github.com/CasadeHole/bot" target="_blank">DONG</a>
-                            <br>
-                            - ONCE THE EXPERIMENTAL VERSION OF DILF, NOW JUST ANOTHER GENERAL PURPOSE BOT FOR CASA DE HOLE.
-                        </li>
-                        <li>
-                            Many more
-                            <br>
-                            You sit here and write this shit, man
-                        </li>
-                    </ul>
-                </li>
-            </ul>
-        </section>
-        <script>
-            // https://stackoverflow.com/a/24181701
-            const age = document.getElementById("age");
-            const birthday = new Date(2000, 3, 2, 11, 44);
-            const ageDiffMS = Date.now() - birthday
-            const ageDate = new Date(ageDiffMS);
-            age.innerText = Math.abs(ageDate.getUTCFullYear() - 1970);
-        </script>
+        <main id="content">
+            {{ markdown $markdownFile.Body }}
+        </main>
     </body>
 </html>
