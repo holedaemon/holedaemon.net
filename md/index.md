@@ -1,4 +1,4 @@
-# holedaemon
+![holedaemon.gif](/static/holedaemon.gif)
 ## priest of the pit, savant lord of the southwest, etc
 
 ---
@@ -17,7 +17,7 @@ the name is **Max**, and this is my intentionally shitty website. i'm a queer 20
 ## fav stuff
 - bands
 - - Bomb the Music Industry!
-- - Jeff Rosenstcok
+- - Jeff Rosenstock
 - - The Arrogant Sons of Bitches
 - - Thirsty Guys
 - - Kill Lincoln
