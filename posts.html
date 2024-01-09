@@ -14,7 +14,9 @@
                 <ul id="posts-ul">
                     <li>
                         {{ range $file := (listFiles "/posts") }}
-                            <a class="list-item" href="/posts/{{ trimSuffix (ext $file) $file }}">{{ trimSuffix (ext $file) $file }}</a>
+                            {{ $coolFile := (include $file | splitFrontMatter)}}
+
+                            <a class="list-item" href="/posts/{{ trimSuffix (ext $file) $file }}">{{ $coolFile.Meta.title }}</a>
                         {{ end }}
                     </li>
                 </ul>
