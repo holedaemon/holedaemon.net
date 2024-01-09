@@ -23,6 +23,7 @@ the name is holedaemon, and this is my intentionally shitty website. i'm a queer
 - - Kill Lincoln
 - - Joystick!
 - - Less than Jake
+- - Screaming Females
 - games
 - - Night in the Woods
 - - The Legend of Zelda: Breath of the Wild
