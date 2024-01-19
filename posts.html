@@ -12,14 +12,14 @@
                 My lazy ass hasn't written anything
             {{ else }}
                 <ul id="posts-ul">
-                    <li>
-                        {{ range $file := (listFiles "/posts") }}
+                    {{ range $file := (listFiles "/posts") }}
+                        <li class="list-item">
                             {{ $name := printf "/posts/%s" $file }}
                             {{ $coolFile := (include $name | splitFrontMatter)}}
 
-                            <a class="list-item" href="/posts/{{ trimSuffix (ext $file) $file }}">{{ $coolFile.Meta.title }}</a>
-                        {{ end }}
-                    </li>
+                            <a href="/posts/{{ trimSuffix (ext $file) $file }}">{{ $coolFile.Meta.title }}</a>
+                        </li>
+                    {{ end }}
                 </ul>
             {{ end }}
         </div>
