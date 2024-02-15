@@ -9,6 +9,7 @@
 ## sitemap
 - [/testimonials](/testimonials)
 - [/posts](/posts)
+- [/shows](/shows)
 
 ## about
 

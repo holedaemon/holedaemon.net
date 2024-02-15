@@ -1,17 +1,1 @@
-{{ $markdownFilePath := "/md/index.md" }}
-{{ if not (fileExists $markdownFilePath ) }}{{ httpError 404 }}{{ end }}
-{{ $markdownFile := (include $markdownFilePath | splitFrontMatter) }}
-
-<!DOCTYPE html>
-<html>
-    <head>
-        {{ include "include/head.html" "holedaemon" }}
-
-        <link rel="stylesheet" href="/static/index.css">
-    </head>
-    <body>
-        <main id="content">
-            {{ markdown $markdownFile.Body }}
-        </main>
-    </body>
-</html>
+{{ include "include/md.html" "index" "holedaemon" }}
