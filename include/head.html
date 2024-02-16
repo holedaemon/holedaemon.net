@@ -1,27 +1,30 @@
-<title>{{index .Args 0}}</title>
+{{ $title := (index .Args 0) }}
+{{ $description := (index .Args 1) }}
+
+<title>{{ $title }}</title>
 
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
 
-<meta property="og:title" content="holedaemon">
-<meta property="og:description" content="webpage for internet poweridiot holedaemon">
+<meta property="og:title" content="{{ $title }}">
+<meta property="og:description" content="{{ $description }}">
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://{{.Host}}{{.Req.URL.Path}}">
-<meta property="og:image" content="https://{{.Host}}/static/pinhead.png">
+<meta property="og:url" content="https://{{ .Host }}{{ .Req.URL.Path }}">
+<meta property="og:image" content="https://{{ .Host }}/static/image/pinhead.jpg">
 
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="holedaemon">
-<meta name="twitter:description" content="webpage for internet poweridiot holedaemon">
-<meta name="twitter:image" content="https://{{.Host}}/static/pinhead.png">
+<meta name="twitter:title" content="{{ $title }}">
+<meta name="twitter:description" content="{{ $description }}">
+<meta name="twitter:image" content="https://{{ .Host }}/static/image/pinhead.jpg">
 <meta name="twitter:site" content="@holedaemon">
 <meta name="twitter:creator" content="@holedaemon">
 
-<link rel="apple-touch-icon" sizes="180x180" href="https://{{.Host}}/static/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="https://{{.Host}}/static/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="https://{{.Host}}/static/favicon-16x16.png">
-<link rel="manifest" href="https://{{.Host}}/static/site.webmanifest">
-<link rel="mask-icon" href="https://{{.Host}}/static/safari-pinned-tab.svg" color="#5bbad5">
-<link rel="shortcut icon" href="https://{{.Host}}/static/favicon.ico">
-<meta name="msapplication-TileColor" content="#da532c">
-<meta name="msapplication-config" content="https://{{.Host}}/static/browserconfig.xml">
-<meta name="theme-color" content="#000000">
+<link rel="apple-touch-icon" sizes="114x114" href="/static/favicon/apple-touch-icon.png?v=1">
+<link rel="icon" type="image/png" sizes="32x32" href="/static/favicon/favicon-32x32.png?v=1">
+<link rel="icon" type="image/png" sizes="16x16" href="/static/favicon/favicon-16x16.png?v=1">
+<link rel="manifest" href="/static/favicon/site.webmanifest?v=1">
+<link rel="mask-icon" href="/static/favicon/safari-pinned-tab.svg?v=1" color="#5bbad5">
+<link rel="shortcut icon" href="/static/favicon/favicon.ico?v=1">
+<meta name="msapplication-TileColor" content="#00aba9">
+<meta name="msapplication-config" content="/static/favicon/browserconfig.xml?v=1">
+<meta name="theme-color" content="#ffffff">

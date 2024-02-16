@@ -1,10 +1,10 @@
-![holedaemon.gif](/static/holedaemon.gif)
+![holedaemon.gif](/static/image/holedaemon.gif)
 ## priest of the pit, savant lord of the southwest, etc
 
 ---
 
-![gay.gif](/static/gay.gif) ![quake.gif](/static/quake.gif) ![scrote.png](/static/scrotegang.png) ![javascript.png](/static/javascript.png) 
-![btmi.gif](/static/btmi.gif)
+![gay.gif](/static/badge/gay.gif) ![quake.gif](/static/badge/quake.gif) ![scrote.png](/static/badge/scrotegang.png) ![javascript.png](/static/badge/javascript.png) 
+![btmi.gif](/static/badge/btmi.gif)
 
 ## sitemap
 - [/testimonials](/testimonials)

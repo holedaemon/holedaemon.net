@@ -4,19 +4,20 @@
 {{ if not (fileExists $markdownFilePath) }}{{ httpError 404 }}{{ end }}
 {{ $markdownFile := (include $markdownFilePath | splitFrontMatter) }}
 {{ $title := default $markdownFilename $markdownFile.Meta.title }}
+{{ $description := default $markdownFilename $markdownFile.Meta.description }}
 <!DOCTYPE html>
 <html>
     <head>
-        {{ include "include/head.html" $title }}
+        {{ include "include/head.html" $title $description }}
 
-        <link rel="stylesheet" href="/static/blog.css">
+        <link rel="stylesheet" href="/static/css/post.css">
     </head>
     <body>
         <main id="content">
             <h1>{{ $title }} &mdash; <a href="/">Home</a></h1>
 
             <span id="markdown">
-                {{markdown $markdownFile.Body}}
+                {{ markdown $markdownFile.Body }}
             </span>
         </main>
     </body>

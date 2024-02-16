@@ -1,0 +1,24 @@
+{{ $markdownFilePath := (print "markdown/" (index .Args 0) ".md") }}
+{{ if not (fileExists $markdownFilePath) }}{{ httpError 404 }}{{ end }}
+{{ $markdownFile := (include $markdownFilePath | splitFrontMatter ) }}
+
+<!DOCTYPE html>
+<html>
+    <head>
+        {{ $css := (print "/static/css/" (index .Args 1) ".css") }}
+        {{ $title := (index .Args 2) }}
+        {{ $description := (index .Args 3) }}
+        {{ include "include/head.html" $title $description }}
+
+        <link rel="stylesheet" href="/static/css/markdown.css">
+
+        {{ if ne (len (index .Args 1)) 0 }}
+        <link rel="stylesheet" href="{{ $css }}">
+        {{ end }}
+    </head>
+    <body>
+        <main id="content">
+            {{ markdown $markdownFile.Body }}
+        </main>
+    </body>
+</html>

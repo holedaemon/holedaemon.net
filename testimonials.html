@@ -1,19 +1,53 @@
 <!DOCTYPE html>
 <html>
     <head>
-        {{ include "include/head.html" "testimonials" }}
+        {{ include "include/head.html" "testimonials" "what does the greater have to say about holedaemon?" }}
 
-        <link rel="stylesheet" href="/static/testimonials.css">
+        <link rel="stylesheet" href="/static/css/testimonials.css">
     </head>
     <body>
-        {{ if eq (len (listFiles "/testimonials")) 0 }}
-            <h1 id="no-testimonials">Literally no one has submitted one. Lol</h1>
-        {{ else }}
-            {{ range $file := (listFiles "/testimonials") }}
-                {{ if (or (eq (ext $file) ".jpg") (eq (ext $file) ".png")) }}
-                    <img src="/testimonials/{{ $file }}">
-                {{ end }}
-            {{ end }}
-        {{ end }}
+        <div id="header">
+            <h1>testimonials</h1>
+            <h2>what users are saying about holedaemon.net</h2>
+            <a href="/">home</a>
+        </div>
+        <div id="testimonials">
+            <div>
+                <h1>yeah</h1>
+                <h2>&mdash; Rayme</h2>
+            </div>
+            <div>
+                <h1>I can barely feel anything since the accident. Five stars.</h1>
+                <h2>&mdash; Captain "Dylan" Mack</h2>
+            </div>
+            <div>
+                <h1>i took three semesters of html and all i got was this lousy div</h1>
+                <h2>&mdash; Jay</h2>
+            </div>
+            <div>
+                <h1>if you thought eating salmiak covered menthols was hard, try scrotegang</h1>
+                <h2>&mdash; bastian</h2>
+            </div>
+            <div>
+                <h1>wanna hop on fortnite</h1>
+                <h2>&mdash; mettic</h2>
+            </div>
+            <div>
+                <h1>Psychically satisfied! The most stars</h1>
+                <h2>&mdash; Joe "powerfulposter" Person 6</h2>
+            </div>
+            <div>
+                <h1>are you recording? fucking turn that shit o</h1>
+                <h2>&mdash; astrobastard</h2>
+            </div>
+            <div>
+                <h1>Max gave me rheumatoid arthritis</h1>
+                <h2>&mdash; Jenna "AddyLinear" Armadillo</h2>
+            </div>
+            <div>
+                <h1>I can cum out of my mouth now. Thanks Demon of Holes!</h1>
+                <h2>&mdash; Xandropolis</h2>
+            </div>
+        </div>
     </body>
 </html>

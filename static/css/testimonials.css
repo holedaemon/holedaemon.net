@@ -1,0 +1,23 @@
+html {
+    height: 100%;
+}
+
+body {
+    display: flex;
+
+    flex-direction: column;
+
+    width: 100%;
+    min-height: 100%;
+    margin: 0;
+
+    text-align: center;
+}
+
+#header {
+    margin-bottom: 3rem;
+}
+
+#testimonials > div {
+    margin-bottom: 5rem;
+}

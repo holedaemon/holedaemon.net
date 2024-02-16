@@ -1,22 +1,19 @@
 <!DOCTYPE html>
 <html>
     <head>
-        {{ include "include/head.html" "uh oh sisters"}}
+        {{ include "include/head.html" "uh oh sisters!!!!" "an error has occurred!!!!" }}
 
-        <link rel="stylesheet" href="/static/error.css">
+        <link rel="stylesheet" href="/static/css/error.css">
     </head>
     <body>
-        <div id="image">
-            <img id="image-pinhead" src="/static/pinhead.jpg">
-        </div>
-        <div id="error">
-            <h1>
-                {{ if eq (placeholder "http.error.status_text") "" }}
-                    Something happened but idk what lol
-                {{ else }}
-                    {{ placeholder "http.error.status_text" }}
-                {{ end }}
+        <main id="error">
+            {{ if eq (placeholder "http.error.status_text") "" }}
+                <h1>Something happened but idk what lol</h1>
+            {{ else }}
+                <h1>{{ placeholder "http.error.status_text" }}</h1>
+                <h2>please report this to the united states government!!!!!</h2>
+            {{ end }}
             </h1>
-        </div>
+        </main>
     </body>
 </html>
